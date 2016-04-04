@@ -29,6 +29,7 @@
 
 		<source-file src="plugin/src/android/EstimoteBeacons.java" target-dir="src/com/lanista" />
 		<source-file src="plugin/src/android/estimote-sdk.aar" target-dir="libs" />
+		<source-file src="plugin/src/android/gradle.properties" target-dir="." />
 	</platform>
 
 </plugin>
