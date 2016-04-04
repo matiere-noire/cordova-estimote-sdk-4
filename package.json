@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-estimote",
+  "version": "0.8.0",
+  "description": "Cordova/PhoneGap plugin for Estimote beacons.",
+  "cordova": {
+    "id": "lanista-plugin-beacon",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanista-training/phonegap-estimotebeacons.git"
+  },
+  "keywords": [
+    "Estimote",
+    "Beacons",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "lanista"
+  ],
+  "author": "MP SPORTS Coaching & Consulting GmbH",
+  "license": "private",
+  "bugs": {
+    "url": "https://github.com/lanista-training/lanista-training/issues"
+  },
+  "homepage": "https://github.com/lanista-training/phonegap-estimotebeacons#readme"
+}
