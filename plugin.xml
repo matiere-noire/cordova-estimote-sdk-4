@@ -13,6 +13,35 @@
 		<clobbers target="lanista" />
 	</js-module>
 
+	<platform name="ios">
+
+		<config-file parent="/*" target="config.xml">
+			<feature name="Estimote">
+				<param name="ios-package" value="CDVEstimote" />
+			</feature>
+		</config-file>
+
+		<framework src="CoreBluetooth.framework"/>
+		<framework src="CoreLocation.framework"/>
+		<framework src="SystemConfiguration.framework"/>
+
+		<source-file framework="true" src="lib/ios/EstimoteSDK/libEstimoteSDK.a"/>
+
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconFirmwareVO.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTFirmwareInfoVO.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconManager.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconRegion.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconVO.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconDefinitions.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeacon.h"/>
+		<header-file src="lib/ios/EstimoteSDK/Headers/ESTDefinitions.h"/>
+		
+
+		<header-file src="src/ios/CDVEstimote.h" />
+		<source-file src="src/ios/CDVEstimote.m" />
+
+	</platform>
+
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="EstimoteBeacons" >
