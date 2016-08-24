@@ -35,6 +35,33 @@ static NSString *const EstimotePluginParam_UUID = @"uuid";
 
     [self startRangingBeacons];
 }
+- (void)startRangingForType:(CDVInvokedUrlCommand*)command
+{
+    NSMutableDictionary *args = [command.arguments objectAtIndex:0];
+    NSString *regionName = [args objectForKey:EstimotePluginParam_Region];
+    NSString *uuid = [args objectForKey:EstimotePluginParam_UUID];
+
+    NSUUID *initWithUUID;
+    if (uuid == nil) {
+        initWithUUID = ESTIMOTE_PROXIMITY_UUID;
+    } else {
+        initWithUUID = [[NSUUID alloc] initWithUUIDString:uuid];
+        if (initWithUUID == nil) {
+            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"invalid uuid"];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+            return;
+        }
+    }
+  
+    self.beaconManager = [[ESTBeaconManager alloc] init];
+    self.beaconManager.delegate = self;
+    self.beaconManager.avoidUnknownStateBeacons = YES;
+
+    self.region = [[ESTBeaconRegion alloc] initWithProximityUUID:initWithUUID identifier:regionName];
+    self.callbackId = command.callbackId;
+
+    [self startRangingBeacons];
+}
 
 // Commented most of these lines because they don't compile against Estimote SDK 2.1.0.
 // We need that version because it's the last XCode 5 iOS 7 SDK built version.
