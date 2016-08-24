@@ -16,7 +16,5 @@
 - (void)startRanging:(CDVInvokedUrlCommand*)command;
 - (void)stopRanging:(CDVInvokedUrlCommand*)command;
 
-- (void)startRangingForType:(CDVInvokedUrlCommand*)command;
-
 
 @end

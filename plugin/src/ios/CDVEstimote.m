@@ -67,17 +67,6 @@ static NSString *const EstimotePluginParam_UUID = @"uuid";
     
        }
 }
--(void)startRangingForType
-{
-    self.nearableManager = [ESTNearableManager new];
-    self.nearableManager.delegate = self;
-    [self.nearableManager startRangingForType:ESTNearableTypeAll];
-}
-
-
-
-
-
 
 - (void)beaconManager:(ESTBeaconManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
