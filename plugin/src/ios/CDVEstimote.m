@@ -105,6 +105,8 @@ static NSString *const EstimotePluginParam_UUID = @"uuid";
 
 
 
+
+
 - (void)beaconManager:(ESTBeaconManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
     [self startRangingBeacons];
