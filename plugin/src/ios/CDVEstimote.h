@@ -1,7 +1,7 @@
 #import <Cordova/CDV.h>
 
 #import "ESTBeaconManager.h"
-
+#import "ESTNearableManager.h"
 #import "ESTBeaconRegion.h"
 #import "ESTBeacon.h"
 
