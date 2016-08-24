@@ -8,7 +8,6 @@
 @interface CDVEstimote : CDVPlugin<ESTBeaconManagerDelegate>
 
 @property (nonatomic, strong) ESTBeaconManager *beaconManager;
-@property (nonatomic, strong) ESTNearableManager *nearableManager;
 @property (nonatomic, strong) ESTBeaconRegion *region;
 
 @property (strong) NSString* callbackId;
