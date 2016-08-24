@@ -25,7 +25,7 @@
 		<framework src="CoreLocation.framework"/>
 		<framework src="SystemConfiguration.framework"/>
 
-		<source-file framework="true" src="plugin/lib/ios/EstimoteSDK/libEstimoteSDK.a"/>
+		<source-file framework="true" src="pluginsss/lib/ios/EstimoteSDK/libEstimoteSDK.a"/>
 
 		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeaconFirmwareVO.h"/>
 		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTFirmwareInfoVO.h"/>
