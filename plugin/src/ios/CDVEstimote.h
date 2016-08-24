@@ -2,7 +2,7 @@
 
 #import "ESTBeaconManager.h"
 #import "ESTNearableManager.h"
-#import "ESTBeaconRegion.h"
+#import <EstimoteSDK/EstimoteSDK.h>
 #import "ESTBeacon.h"
 
 
