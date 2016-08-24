@@ -25,16 +25,16 @@
 		<framework src="CoreLocation.framework"/>
 		<framework src="SystemConfiguration.framework"/>
 
-		<source-file framework="true" src="lib/ios/EstimoteSDK/libEstimoteSDK.a"/>
+		<source-file framework="true" src="plugin/lib/ios/EstimoteSDK/libEstimoteSDK.a"/>
 
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconFirmwareVO.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTFirmwareInfoVO.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconManager.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconRegion.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconVO.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeaconDefinitions.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTBeacon.h"/>
-		<header-file src="lib/ios/EstimoteSDK/Headers/ESTDefinitions.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeaconFirmwareVO.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTFirmwareInfoVO.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeaconManager.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeaconRegion.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeaconVO.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeaconDefinitions.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTBeacon.h"/>
+		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTDefinitions.h"/>
 		
 
 		<header-file src="src/ios/CDVEstimote.h" />
