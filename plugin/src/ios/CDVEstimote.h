@@ -4,7 +4,7 @@
 
 #import "ESTBeaconRegion.h"
 #import "ESTBeacon.h"
-#import "EstimoteSDK.h"
+
 
 @interface CDVEstimote : CDVPlugin<ESTBeaconManagerDelegate>
 
