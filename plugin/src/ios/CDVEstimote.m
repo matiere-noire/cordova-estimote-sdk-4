@@ -73,35 +73,7 @@ static NSString *const EstimotePluginParam_UUID = @"uuid";
     self.nearableManager.delegate = self;
     [self.nearableManager startRangingForType:ESTNearableTypeAll];
 }
-- (void)nearableManager:(ESTNearableManager *)manager
-      didRangeNearables:(NSArray *)nearables
-               withType:(ESTNearableType)type
-{
-    /*
-     * Update local nearables array and reload table view
-     */
-    self.nearablesArray = nearables;
-    [self.tableView reloadData];
-}
-- (void)processNearables:(NSArray*)nearables
-{
-    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
 
-    if ([nearables count] > 0){
-        
-        if ([mutableArray count] > 0){
-            NSDictionary *data = [NSDictionary dictionaryWithObject:mutableArray forKey:@"nearables"];
-
-            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:data];
-
-            [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
-            });
-        }
-    }
-}
 
 
 
