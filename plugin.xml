@@ -37,8 +37,8 @@
 		<header-file src="plugin/lib/ios/EstimoteSDK/Headers/ESTDefinitions.h"/>
 		
 
-		<header-file src="src/ios/CDVEstimote.h" />
-		<source-file src="src/ios/CDVEstimote.m" />
+		<header-file src="plugin/src/ios/CDVEstimote.h" />
+		<source-file src="plugin/src/ios/CDVEstimote.m" />
 
 	</platform>
 
