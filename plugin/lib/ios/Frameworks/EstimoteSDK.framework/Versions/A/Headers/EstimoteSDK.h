@@ -7,7 +7,7 @@
 //  |______|___/\__|_|_| |_| |_|\___/ \__\___| |_____/|_____/|_|\_\
 //
 //
-//  Version: 4.7.4
+//  Version: 4.10.0
 //  Copyright (c) 2016 Estimote. All rights reserved.
 
 /**
@@ -45,9 +45,11 @@
 #import "ESTSettingsConnectivity.h"
 #import "ESTSettingConnectivityInterval.h"
 #import "ESTSettingConnectivityPower.h"
+#import "ESTSettingShakeToConnectEnable.h"
 
 #import "ESTBeaconOperationConnectivityInterval.h"
 #import "ESTBeaconOperationConnectivityPower.h"
+#import "ESTBeaconOperationShakeToConnectEnable.h"
 
 /**
  *  Settings Power
@@ -59,25 +61,23 @@
 #import "ESTSettingPowerDarkToSleepEnable.h"
 #import "ESTSettingPowerBatteryLifetime.h"
 #import "ESTSettingPowerMotionOnlyBroadcastingEnable.h"
+#import "ESTSettingPowerMotionOnlyBroadcastingDelay.h"
 
 #import "ESTBeaconOperationPowerSmartPowerModeEnable.h"
 #import "ESTBeaconOperationPowerFlipToSleepEnable.h"
 #import "ESTBeaconOperationPowerDarkToSleepEnable.h"
 #import "ESTCloudOperationPowerBatteryLifetime.h"
 #import "ESTBeaconOperationPowerMotionOnlyBroadcastingEnable.h"
+#import "ESTBeaconOperationPowerMotionOnlyBroadcastingDelay.h"
 
 /**
  *  Settings Power
  */
-#import "ESTSettingPowerSmartPowerModeEnable.h"
-#import "ESTSettingPowerMotionOnlyBroadcastingEnable.h"
 #import "ESTSettingPowerScheduledAdvertisingEnable.h"
 #import "ESTSettingPowerScheduledAdvertisingPeriod.h"
 #import "ESTSettingPowerBatteryPercentage.h"
 #import "ESTSettingPowerBatteryVoltage.h"
 
-#import "ESTBeaconOperationPowerSmartPowerModeEnable.h"
-#import "ESTBeaconOperationPowerMotionOnlyBroadcastingEnable.h"
 #import "ESTBeaconOperationPowerScheduledAdvertisingEnable.h"
 #import "ESTBeaconOperationPowerScheduledAdvertisingPeriod.h"
 #import "ESTBeaconOperationPowerBatteryPercentage.h"
@@ -237,13 +237,16 @@
  *  Sensors
  */
 #import "ESTSettingsSensors.h"
+
 #import "ESTSettingSensorsAmbientLight.h"
 #import "ESTSettingSensorsMotionNotificationEnable.h"
 #import "ESTSettingSensorsTemperature.h"
+#import "ESTSettingSensorsPressure.h"
 
 #import "ESTBeaconOperationSensorsAmbientLight.h"
 #import "ESTBeaconOperationSensorsMotionNotificationEnable.h"
 #import "ESTBeaconOperationSensorsTemperature.h"
+#import "ESTBeaconOperationSensorsPressure.h"
 
 #import "ESTNotificationMotion.h"
 #import "ESTNotificationGPIOData.h"
@@ -343,7 +346,7 @@
  */
 #import "ESTRequestV2GetDeviceDetails.h"
 #import "ESTRequestV2GetDevices.h"
-#import "ESTRequestV2GetDevicesPending.h"
+#import "ESTRequestV2DevicesUpdate.h"
 
 /**
  *  Cloud API v2 value objects
@@ -359,6 +362,7 @@
 #import "ESTDeviceSettingsAdvertiserEddystoneURL.h"
 #import "ESTDeviceSettingsAdvertiserEddystoneTLM.h"
 #import "ESTDeviceSettingsAdvertiserEddystoneEID.h"
+#import "ESTDeviceSettingsAdvertiserEstimoteLocation.h"
 #import "ESTDeviceSettingsAdvertiserEstimoteTLM.h"
 #import "ESTDeviceStatusReport.h"
 #import "ESTDeviceGeoLocation.h"
@@ -376,3 +380,10 @@
 #import "ESTTelemetryNotificationSystemStatus.h"
 #import "ESTTelemetryNotificationMagnetometer.h"
 #import "ESTTelemetryNotificationGPIO.h"
+#import "ESTTelemetryNotificationPressure.h"
+
+/** 
+ * Monitoring
+ */
+#import "ESTMonitoringManager.h"
+
