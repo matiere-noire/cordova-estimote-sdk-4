@@ -158,7 +158,7 @@ typedef NS_ENUM(NSInteger, ESTDeviceSettingsManagerError)
 /**
  *  Group of settings related to Generic Attribute Profile.
  */
-@property (nonatomic, readonly) ESTSettingsEddystoneConfigurationService *eddystoneConfigurationService;
+@property (nonatomic, strong, readonly) ESTSettingsEddystoneConfigurationService *eddystoneConfigurationService;
 
 
 #pragma mark - Advanced Settings API
@@ -228,6 +228,16 @@ typedef NS_ENUM(NSInteger, ESTDeviceSettingsManagerError)
  *  @return Initialized object.
  */
 - (instancetype)initWithDevice:(ESTDeviceLocationBeacon *)device peripheral:(ESTPeripheralTypeUtility *)peripheral;
+
+/*
+ *  Method allows to localy initialise settings.
+ *
+ *  As a result of this operation `settingsCollection` property if updated
+ *  with firmware application version.
+ *
+ *  @param completion Block invoked when operation is complete.
+ */
+- (void)initializedOfflineSettingsWithCompletion:(ESTDeviceSettingsManagerSyncCompletionBlock)completion;
 
 /*
  *  Method allows to synchronise all device settings with Estimote Cloud.
