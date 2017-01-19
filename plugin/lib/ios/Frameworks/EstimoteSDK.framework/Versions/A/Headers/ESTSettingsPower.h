@@ -18,7 +18,6 @@
 @class ESTSettingPowerDarkToSleepThreshold;
 @class ESTSettingPowerBatteryLifetime;
 @class ESTSettingPowerMotionOnlyBroadcastingEnable;
-@class ESTSettingPowerMotionOnlyBroadcastingDelay;
 @class ESTSettingPowerScheduledAdvertisingEnable;
 @class ESTSettingPowerScheduledAdvertisingPeriod;
 @class ESTSettingPowerBatteryPercentage;
@@ -71,11 +70,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  Motion Only Broadcasting enable setting.
  */
 @property (nonatomic, strong, readonly) ESTSettingPowerMotionOnlyBroadcastingEnable *motionOnlyBroadcastingEnable;
-
-/**
- *  Motion Only Broadcasting delay - time in milliseconds when device stops broadcasting since last movement.
- */
-@property (nonatomic, strong, readonly) ESTSettingPowerMotionOnlyBroadcastingDelay *motionOnlyBroadcastingDelay;
 
 /**
  *  Scheduled advertising enable setting.

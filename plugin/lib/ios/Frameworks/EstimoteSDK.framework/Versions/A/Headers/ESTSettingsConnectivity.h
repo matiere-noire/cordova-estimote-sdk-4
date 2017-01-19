@@ -14,8 +14,6 @@
 @class ESTDeviceSettingsCollection;
 @class ESTSettingConnectivityInterval;
 @class ESTSettingConnectivityPower;
-@class ESTSettingNearToConnectEnable;
-@class ESTSettingShakeToConnectEnable;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,11 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  Setting for connectivity packet broadcasting power.
  */
 @property (nonatomic, strong, readonly) ESTSettingConnectivityPower *power;
-
-/**
- *  Shake To Connect enable setting.
- */
-@property (nonatomic, strong, readonly) ESTSettingShakeToConnectEnable *shakeToConnectEnable;
 
 /**
  *  Designated initializer.

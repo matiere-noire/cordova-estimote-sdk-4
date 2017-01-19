@@ -23,15 +23,7 @@ typedef NS_ENUM(NSInteger, ESTLocationBeaconBulkUpdaterError)
     /**
      *  Device passed as a part of bulk update was not in range.
      */
-    ESTLocationBeaconBulkUpdaterErrorDeviceDiscoveryFailed,
-    /**
-     *  No pending changes related to settings and firmawre updated.
-     */
-    ESTLocationBeaconBulkUpdaterErrorNoPendingChanges,
-    /**
-     *  Bulk updater timeout.
-     */
-    ESTLocationBeaconBulkUpdaterErrorTimeout
+    ESTLocationBeaconBulkUpdaterErrorDeviceDiscoveryFailed
 };
 
 /**
@@ -56,33 +48,29 @@ typedef NS_ENUM(NSInteger, ESTBulkUpdaterStatus)
 typedef NS_ENUM(NSInteger, ESTBulkUpdaterDeviceUpdateStatus)
 {
     /**
-     *  Not able to determine current update status.
+     * Not able to determine current update status.
      */
     ESTBulkUpdaterDeviceUpdateStatusUnknown,
     /**
-     *  Device not detected yet. Scanning in progress.
+     * Device not detected yet. Scanning in progress.
      */
     ESTBulkUpdaterDeviceUpdateStatusScanning,
     /**
-     *  Device detected. Waiting to connect and update settings.
+     * Device detected. Waiting to connect and update settings.
      */
     ESTBulkUpdaterDeviceUpdateStatusPendingUpdate,
     /**
-     *  Device is beeing connected to and updated.
+     * Device is beeing connected to and updated.
      */
     ESTBulkUpdaterDeviceUpdateStatusUpdating,
     /**
-     *  Device update succeeded.
+     * Device update succeeded.
      */
     ESTBulkUpdaterDeviceUpdateStatusSucceeded,
     /**
-     *  Device update failed.
+     * Device update failed.
      */
-    ESTBulkUpdaterDeviceUpdateStatusFailed,
-    /**
-     *  Device out of scanning range.
-     */
-    ESTBulkUpdaterDeviceUpdateStatusOutOfRange
+    ESTBulkUpdaterDeviceUpdateStatusFailed
 };
 
 @class ESTLocationBeaconBulkUpdater;
@@ -93,11 +81,6 @@ typedef NS_ENUM(NSInteger, ESTBulkUpdaterDeviceUpdateStatus)
 @protocol ESTLocationBeaconBulkUpdaterDelegate <NSObject>
 
 @optional
-
-/**
- *  Informs bulkdUpdater delegate that list of devices to update was fetched. List of devices can be accessed through `updateConfigurations`.
- */
-- (void)bulkUpdaterDidFetchDevices:(ESTLocationBeaconBulkUpdater *)bulkUpdater;
 
 /**
  *  Informs bulkUpdater delegate about a change of status for certain device.
@@ -126,11 +109,6 @@ typedef NS_ENUM(NSInteger, ESTBulkUpdaterDeviceUpdateStatus)
  */
 - (void)bulkUpdater:(ESTLocationBeaconBulkUpdater *)bulkUpdater didFailWithError:(NSError *)error;
 
-/**
- *  Informs bulkUpdater delegate that caller decided to cancel update.
- */
-- (void)bulkUpdaterDidCancel:(ESTLocationBeaconBulkUpdater *)bulkUpdater;
-
 @end
 
 /**
@@ -148,9 +126,9 @@ typedef NS_ENUM(NSInteger, ESTBulkUpdaterDeviceUpdateStatus)
 @property (nonatomic, weak) id<ESTLocationBeaconBulkUpdaterDelegate> delegate;
 
 /**
- *  Timeout for bulk update procedure in seconds. Default values is 600s (10 minutes). 0 means no timeout.
+ *  Timeout for bulk update procedure in seconds. 0 means no timeout.
  */
-@property (nonatomic, assign, readonly) NSTimeInterval timeout;
+@property (nonatomic, assign) NSTimeInterval timeout;
 
 /**
  *  Informs about the current status of bulk updater.
@@ -181,7 +159,7 @@ typedef NS_ENUM(NSInteger, ESTBulkUpdaterDeviceUpdateStatus)
  * Cancels the bulk update procedure.
  * Note that, if update for a certain device has already started it might not be canceled.
  */
-- (void)cancelUpdate;
+- (void)cancel;
 
 /**
  * Informs about the update status for a given device identifier.
@@ -191,10 +169,5 @@ typedef NS_ENUM(NSInteger, ESTBulkUpdaterDeviceUpdateStatus)
  * @return `ESTBulkUpdaterUpdateStatus` value, informing about the current update status.
  */
 - (ESTBulkUpdaterDeviceUpdateStatus)statusForDeviceWithIdentifier:(NSString *)deviceIdentifier;
-
-/**
- *  Count of already updated devices.
- */
-- (NSInteger)numberOfUpdatedDevices;
 
 @end

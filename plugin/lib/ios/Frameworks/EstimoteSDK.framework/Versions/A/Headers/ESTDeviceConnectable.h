@@ -78,14 +78,9 @@ typedef void(^ESTDeviceFirmwareUpdateProgressBlock)(NSInteger value);
 ///--------------------------------------------------------------------
 
 /**
- *  Perform connection to the device.
+ * Perform connection to the device.
  */
 - (void)connect;
-
-/**
- *  Perform connection to the device with automatic firmware update.
- */
-- (void)connectAndUpdate;
 
 /**
  * Cancel connection to the device.

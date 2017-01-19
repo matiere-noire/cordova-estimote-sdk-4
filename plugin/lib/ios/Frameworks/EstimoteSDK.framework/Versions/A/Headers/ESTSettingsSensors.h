@@ -15,7 +15,6 @@
 @class ESTSettingSensorsAmbientLight;
 @class ESTSettingSensorsMotionNotificationEnable;
 @class ESTSettingSensorsTemperature;
-@class ESTSettingSensorsPressure;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,11 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  Ambient temperature setting.
  */
 @property (nonatomic, strong, readonly) ESTSettingSensorsTemperature *temperature;
-
-/**
- *  Atmospheric pressure setting.
- */
-@property (nonatomic, strong, readonly) ESTSettingSensorsPressure *pressure;
 
 /**
  *  Enable Motion Notification (AKA Motion Detection).

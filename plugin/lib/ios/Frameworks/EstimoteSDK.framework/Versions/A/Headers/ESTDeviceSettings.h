@@ -12,7 +12,7 @@
 #import "ESTBaseVO.h"
 
 @class ESTDeviceSettingsGeneral,
-ESTDeviceSettingsAdvertiserConnectivity,
+ESTDeviceSettingsAdvertiser,
 ESTDeviceSettingsAdvertiserIBeacon,
 ESTDeviceSettingsAdvertiserEddystoneUID,
 ESTDeviceSettingsAdvertiserEddystoneURL,
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Advertiser settings for Estimote Service packets.
  */
-@property (nonatomic, strong, readonly) NSArray<ESTDeviceSettingsAdvertiserConnectivity *> *connectivity;
+@property (nonatomic, strong, readonly) NSArray<ESTDeviceSettingsAdvertiser *> *connectivity;
 
 /**
  *  Advertiser settings for iBeacon packets.
@@ -90,11 +90,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param deviceSettings Device settings should be used to override.
  */
 - (ESTDeviceSettings *)settingsUpdatedWithDeviceSettings:(ESTDeviceSettings *)deviceSettings;
-
-/**
- *  Method for returning dictionary represantation of device's settings.
- */
-- (NSDictionary *)cloudDictionary;
 
 @end
 
