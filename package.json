@@ -9,7 +9,6 @@
       "ios"
     ]
   },
-  "private": true ,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lanista-training/lanista-estimotebeacons.git"
