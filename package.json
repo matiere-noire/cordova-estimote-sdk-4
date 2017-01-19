@@ -1,6 +1,6 @@
 {
-  "name": "lanista-plugin-beacon",
-  "version": "0.8.5",
+  "name": "lanista-mobility",
+  "version": "1.0.0",
   "description": "Cordova/PhoneGap plugin for Estimote beacons.",
   "cordova": {
     "id": "lanista-plugin-beacon",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lanista-training/lanista-estimotebeacons.git"
+    "url": "git+https://github.com/lanista-training/lanista-mobility.git"
   },
   "keywords": [
     "Estimote",
