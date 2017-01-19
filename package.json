@@ -1,5 +1,5 @@
 {
-  "name": "lanista-mobility",
+  "name": "@lanista/lanista-mobility",
   "version": "1.0.0",
   "description": "Cordova/PhoneGap plugin for Estimote beacons.",
   "cordova": {
