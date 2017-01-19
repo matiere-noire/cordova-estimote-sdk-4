@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-estimote",
-  "version": "0.8.0",
+  "version": "0.8.5",
   "description": "Cordova/PhoneGap plugin for Estimote beacons.",
   "cordova": {
     "id": "lanista-plugin-beacon",
