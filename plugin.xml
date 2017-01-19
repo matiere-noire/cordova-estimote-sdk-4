@@ -2,7 +2,7 @@
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="lanista-plugin-estimotebeacon"
-	version="0.8.5">
+	version="0.8.6">
 
 	<name>LanistaEstimoteBeacons</name>
 	<description>Lanista Cordova/PhoneGap plugin for Estimote beacons.</description>
@@ -10,7 +10,7 @@
 	<keywords>Lanista, Estimote, Beacons</keywords>
 
 	<js-module src="plugin/src/js/EstimoteBeacons.js" name="EstimoteBeacons">
-		<clobbers target="lanista" />
+		<clobbers target="EstimoteBeacons" />
 	</js-module>
 
 	<platform name="ios">

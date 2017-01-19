@@ -1,5 +1,5 @@
 #import <Cordova/CDV.h>
-
+#import <EstimoteSDK/ESTUtilityManager.h>
 #import <EstimoteSDK/ESTBeaconManager.h>
 #import <EstimoteSDK/ESTSecureBeaconManager.h>
 #import <EstimoteSDK/ESTNearableManager.h>
