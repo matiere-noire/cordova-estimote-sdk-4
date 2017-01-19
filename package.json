@@ -9,6 +9,7 @@
       "ios"
     ]
   },
+  "private": true ,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lanista-training/phonegap-estimotebeacons.git"
