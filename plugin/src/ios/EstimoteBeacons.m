@@ -595,6 +595,17 @@
 }
 
 /**
+ * Stop ranging.
+ */
+- (void) beacons_stopRangingBeacons:(CDVInvokedUrlCommand*)command
+{
+
+	[self
+		beacons_impl_stopRangingBeaconsInRegion:command
+		manager:self.beaconManager];
+}
+
+/**
  * Stop CoreLocation ranging.
  */
 - (void) beacons_stopRangingBeaconsInRegion:(CDVInvokedUrlCommand*)command
@@ -685,6 +696,17 @@
 
 	// Start ranging.
 	[aManager startRangingBeaconsInRegion:region];
+}
+
+/**
+ * Stop ranging.
+ */
+- (void) beacons_impl_stopRangingBeacons:(CDVInvokedUrlCommand*)command
+	manager:(id)aManager
+{
+	NSUUID *myUUID = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+  CLBeaconRegion* myRegion = [[CLBeaconRegion alloc] initWithProximityUUID:myUUID identifier:@"MyRegion"];
+	[self.beaconManager stopRangingBeaconsInRegion:myRegion];
 }
 
 /**

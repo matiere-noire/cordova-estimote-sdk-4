@@ -720,6 +720,33 @@ estimote.beacons.startRangingBeaconsInRegion = function(region, success, error)
  * @example Example that stops ranging:
  *   estimote.beacons.stopRangingBeaconsInRegion({})
  */
+estimote.beacons.stopRangingBeacons = function(region, success, error)
+{
+	if (!checkExecParamsRegion(region)) {
+		return false;
+	}
+
+	exec(success,
+		error,
+		'EstimoteBeacons',
+		'beacons_stopRangingBeacons',
+		[region]
+	);
+
+	return true;
+};
+
+/**
+ * Stop ranging beacons. Available on iOS and Android.
+ *
+ * @param {BeaconRegion} region Dictionary with region properties (mandatory).
+ * @param {ErrorCallbackNoParams} [success] Function called when ranging
+ * is stopped (optional).
+ * @param {ErrorCallback} [error] Function called on error (optional).
+ *
+ * @example Example that stops ranging:
+ *   estimote.beacons.stopRangingBeaconsInRegion({})
+ */
 estimote.beacons.stopRangingBeaconsInRegion = function(region, success, error)
 {
 	if (!checkExecParamsRegion(region)) {
