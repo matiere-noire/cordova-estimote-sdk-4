@@ -478,7 +478,7 @@
 	NSDictionary* regionDictionary = [self regionToDictionary:region];
 	return @{
 			 @"region" : regionDictionary,
-			 @"beacons" : [self coreLocationBeaconToDictionary:beacons.firstObject]
+			 @"beacon" : [self coreLocationBeaconToDictionary:beacons.firstObject]
 			 };
 }
 
@@ -768,7 +768,7 @@
 	didRangeBeacons:(NSArray*)beacons
 	inRegion:(CLBeaconRegion*)region
 {
-	if ([beacons count] > 0)
+	if ([beacons count] > 0 && beacons.firstObject.proximityUUID.UUIDString == "1")
 	{
 		NSString* callbackId = [self.callbackIds_beaconsRanging
 			objectForKey:[self regionDictionaryKey:region]];
