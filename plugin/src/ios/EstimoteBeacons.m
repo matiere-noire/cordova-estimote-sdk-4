@@ -669,6 +669,7 @@
 		setObject:command.callbackId
 		forKey:[self regionDictionaryKey:myRegion]];
 
+	[self.beaconManager stopRangingBeaconsInRegion:myRegion];
   [self.beaconManager startRangingBeaconsInRegion:myRegion];
 
 }
@@ -770,7 +771,7 @@
 			// Create dictionary with result.
 			NSDictionary* resultDictionary = [self
 				dictionaryWithRegion:region
-				andBeacons:beacons];
+				andBeacons:beacons.firstObject];
 
 			// Pass result to JavaScript callback.
 			CDVPluginResult* result = [CDVPluginResult
