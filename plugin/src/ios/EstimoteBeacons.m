@@ -774,9 +774,8 @@
 			objectForKey:[self regionDictionaryKey:region]];
 		if (nil != callbackId)
 		{
-			NSString *veryNear = @"1";
-			NSString *firstBeacon = beacons.firstObject;
-			if( firstBeacon.proximityUUID.UUIDString isEqualToString:veryNear ) {
+			CLBeacon *nearestBeacon = beacons.firstObject;
+			if( nearestBeacon.proximity == 1 ) {
 				// Create dictionary with result.
 				NSDictionary* resultDictionary = [self
 					dictionaryWithRegion:region
