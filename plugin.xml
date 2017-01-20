@@ -37,9 +37,11 @@
 		<framework src="SystemConfiguration.framework" />
 
 		<framework src="plugin/src/ios/Frameworks/EstimoteSDK.framework" custom="true" />
-
 		<header-file src="plugin/src/ios/EstimoteBeacons.h" />
+		<header-file src="plugin/src/ios/BeaconID.h" />
 		<source-file src="plugin/src/ios/EstimoteBeacons.m" />
+		<source-file src="plugin/src/ios/BeaconID.m" />
+
 
 		<config-file target="config.xml" parent="/*">
 			<feature name="EstimoteBeacons">
