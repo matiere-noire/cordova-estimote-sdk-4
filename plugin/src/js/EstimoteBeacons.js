@@ -657,9 +657,9 @@ estimote.beacons.stopEstimoteBeaconDiscovery = function(success, error)
  *     function(errorMessage) {
  *       console.log('Ranging error: ' + errorMessage) })
  */
-estimote.beacons.startRangingBeacons = function(region, success, error)
+estimote.beacons.startRangingBeacons = function(success, error)
 {
-	if (!checkExecParamsRegionSuccessError(region, success, error)) {
+	if (!checkExecParamsRegionSuccessError(success, error)) {
 		return false;
 	}
 
@@ -667,7 +667,7 @@ estimote.beacons.startRangingBeacons = function(region, success, error)
 		error,
 		'EstimoteBeacons',
 		'beacons_startRangingBeacons',
-		[region]
+		[{}]
 	);
 
 	return true;
