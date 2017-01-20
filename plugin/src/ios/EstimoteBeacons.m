@@ -768,7 +768,7 @@
 	didRangeBeacons:(NSArray*)beacons
 	inRegion:(CLBeaconRegion*)region
 {
-	if ([beacons count] > 0 && beacons.firstObject.proximityUUID.UUIDString == "1")
+	if ([beacons count] > 0 && beacons.firstObject.proximityUUID.UUIDString isEqualToString:@"1")
 	{
 		NSString* callbackId = [self.callbackIds_beaconsRanging
 			objectForKey:[self regionDictionaryKey:region]];
