@@ -649,6 +649,42 @@ estimote.beacons.stopEstimoteBeaconDiscovery = function(success, error)
  *   success(BeaconInfo)
  *
  * @example Example that prints all beacons and properties:
+ *   estimote.beacons.startRangingBeacons(
+ *     {}, // Empty region matches all beacons.
+ *     function(info) {
+ *       console.log('Beacons ranged:')
+ *       estimote.printObject(info) },
+ *     function(errorMessage) {
+ *       console.log('Ranging error: ' + errorMessage) })
+ */
+estimote.beacons.startRangingBeacons = function(region, success, error)
+{
+	if (!checkExecParamsRegionSuccessError(region, success, error)) {
+		return false;
+	}
+
+	exec(success,
+		error,
+		'EstimoteBeacons',
+		'beacons_startRangingBeacons',
+		[region]
+	);
+
+	return true;
+};
+
+/**
+ * Start ranging beacons. Available on iOS and Android.
+ *
+ * @param {BeaconRegion} region Dictionary with region properties (mandatory).
+ * @param {function} success Function called when beacons are ranged,
+ * takes a {@link BeaconInfo} object as parameter (mandatory).
+ * @param {ErrorCallback} error Function called on error (mandatory).
+ *
+ * @example callback format:
+ *   success(BeaconInfo)
+ *
+ * @example Example that prints all beacons and properties:
  *   estimote.beacons.startRangingBeaconsInRegion(
  *     {}, // Empty region matches all beacons.
  *     function(info) {
