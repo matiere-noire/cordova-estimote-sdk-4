@@ -91,8 +91,6 @@ estimote.triggers = estimote.triggers || {};
  */
 estimote.triggers.rules = estimote.triggers.rules || {};
 
-estimote.version = 1.0;
-
 /*********************************************************/
 /****************** Debugging Functions ******************/
 /*********************************************************/
