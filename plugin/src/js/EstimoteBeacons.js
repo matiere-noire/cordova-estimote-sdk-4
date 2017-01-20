@@ -659,7 +659,7 @@ estimote.beacons.stopEstimoteBeaconDiscovery = function(success, error)
  */
 estimote.beacons.startRangingBeacons = function(success, error)
 {
-	if (!checkExecParamsRegionSuccessError(success, error)) {
+	if (!checkExecParamsRegionSuccessError({}, success, error)) {
 		return false;
 	}
 
