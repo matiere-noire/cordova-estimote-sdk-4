@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 #import <Cordova/CDV.h>
 #import <EstimoteSDK/ESTUtilityManager.h>
 #import <EstimoteSDK/ESTBeaconManager.h>
@@ -568,6 +570,16 @@
 	}
 }
 
+/**
+ * Start ranging.
+ */
+- (void) beacons_startRangingBeacons:(CDVInvokedUrlCommand*)command
+{
+	[self
+		beacons_impl_startRangingBeacons:command
+		manager:self.beaconManager];
+}
+
 #pragma mark - CoreLocation ranging
 
 /**
@@ -609,6 +621,43 @@
 	[self
 		beacons_impl_stopRangingBeaconsInRegion:command
 		manager:self.secureBeaconManager];
+}
+
+/**
+ * Start ranging.
+ */
+- (void) beacons_impl_startRangingBeacons:(CDVInvokedUrlCommand*)command
+	manager:(id)aManager
+{
+/*
+	//NSLog(@"OBJC startRangingBeaconsInRegion");
+
+	// Get region dictionary passed from JavaScript and
+	// create a beacon region object.
+	NSDictionary* regionDictionary = [command argumentAtIndex:0];
+	CLBeaconRegion* region = [self createRegionFromDictionary:regionDictionary];
+
+	// Stop any ongoing ranging for the given region.
+	[self helper_stopRangingBeaconsInRegion:region manager:aManager];
+
+	// Save callback id for the region.
+	[self.callbackIds_beaconsRanging
+		setObject:command.callbackId
+		forKey:[self regionDictionaryKey:region]];
+
+	// Start ranging.
+	[aManager startRangingBeaconsInRegion:region];
+	*/
+
+	NSUUID *myUUID = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+  CLBeaconRegion* myRegion = [[CLBeaconRegion alloc] initWithProximityUUID:myUUID identifier:@"MyRegion"];
+
+	[self.callbackIds_beaconsRanging
+		setObject:command.callbackId
+		forKey:[self regionDictionaryKey:myRegion]];
+
+  [self.beaconManager startRangingBeaconsInRegion:myRegion];
+
 }
 
 /**
