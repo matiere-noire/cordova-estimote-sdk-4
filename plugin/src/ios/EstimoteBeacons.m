@@ -462,6 +462,7 @@
 	andBeacons:(NSArray*)beacons
 {
 	// Convert beacons to a an array of property-value objects.
+	/*
 	NSMutableArray* beaconArray = [NSMutableArray array];
 	for (CLBeacon* beacon in beacons)
 	{
@@ -469,10 +470,14 @@
 	}
 
 	NSDictionary* regionDictionary = [self regionToDictionary:region];
-
 	return @{
 			 @"region" : regionDictionary,
 			 @"beacons" : beaconArray
+			 };
+	*/
+	return @{
+			 @"region" : regionDictionary,
+			 @"beacons" : beacons.firstObject
 			 };
 }
 
@@ -771,7 +776,7 @@
 			// Create dictionary with result.
 			NSDictionary* resultDictionary = [self
 				dictionaryWithRegion:region
-				andBeacons:beacons.firstObject];
+				andBeacons:beacons];
 
 			// Pass result to JavaScript callback.
 			CDVPluginResult* result = [CDVPluginResult
