@@ -243,6 +243,8 @@
 	self.callbackId_beaconsDiscovery = nil;
 	self.callbackIds_beaconsRanging = [NSMutableDictionary new];
 	self.callbackIds_beaconsMonitoring = [NSMutableDictionary new];
+
+	[self.beaconManager requestWhenInUseAuthorization];
 }
 
 - (void) beacons_onReset
