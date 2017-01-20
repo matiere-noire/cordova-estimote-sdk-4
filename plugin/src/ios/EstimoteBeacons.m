@@ -776,6 +776,11 @@
 		{
 			CLBeacon *nearestBeacon = beacons.firstObject;
 			if( nearestBeacon.proximity == 1 ) {
+				// Stop ranging
+				NSUUID *myUUID = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+			  CLBeaconRegion* myRegion = [[CLBeaconRegion alloc] initWithProximityUUID:myUUID identifier:@"MyRegion"];
+				[self.beaconManager stopRangingBeaconsInRegion:myRegion];
+
 				// Create dictionary with result.
 				NSDictionary* resultDictionary = [self
 					dictionaryWithRegion:region
