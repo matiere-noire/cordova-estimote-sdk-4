@@ -768,25 +768,29 @@
 	didRangeBeacons:(NSArray*)beacons
 	inRegion:(CLBeaconRegion*)region
 {
-	if ([beacons count] > 0 && beacons.firstObject.proximityUUID.UUIDString isEqualToString:@"1")
+	if ([beacons count] > 0 )
 	{
 		NSString* callbackId = [self.callbackIds_beaconsRanging
 			objectForKey:[self regionDictionaryKey:region]];
 		if (nil != callbackId)
 		{
-			// Create dictionary with result.
-			NSDictionary* resultDictionary = [self
-				dictionaryWithRegion:region
-				andBeacons:beacons];
+			NSString *veryNear = @"1";
+			NSString *firstBeacon = beacons.firstObject;
+			if( firstBeacon.proximityUUID.UUIDString isEqualToString:veryNear ) {
+				// Create dictionary with result.
+				NSDictionary* resultDictionary = [self
+					dictionaryWithRegion:region
+					andBeacons:beacons];
 
-			// Pass result to JavaScript callback.
-			CDVPluginResult* result = [CDVPluginResult
-				resultWithStatus:CDVCommandStatus_OK
-				messageAsDictionary:resultDictionary];
-			[result setKeepCallbackAsBool: YES];
-			[self.commandDelegate
-				sendPluginResult:result
-				callbackId:callbackId];
+				// Pass result to JavaScript callback.
+				CDVPluginResult* result = [CDVPluginResult
+					resultWithStatus:CDVCommandStatus_OK
+					messageAsDictionary:resultDictionary];
+				[result setKeepCallbackAsBool: YES];
+				[self.commandDelegate
+					sendPluginResult:result
+					callbackId:callbackId];
+			}
 		}
 	}
 }
