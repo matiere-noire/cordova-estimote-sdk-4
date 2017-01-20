@@ -475,9 +475,10 @@
 			 @"beacons" : beaconArray
 			 };
 	*/
+	NSDictionary* regionDictionary = [self regionToDictionary:region];
 	return @{
 			 @"region" : regionDictionary,
-			 @"beacons" : beacons.firstObject
+			 @"beacons" : [self coreLocationBeaconToDictionary:beacons.firstObject]
 			 };
 }
 
