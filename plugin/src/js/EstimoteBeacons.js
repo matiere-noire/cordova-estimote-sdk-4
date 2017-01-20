@@ -91,6 +91,11 @@ estimote.triggers = estimote.triggers || {};
  */
 estimote.triggers.rules = estimote.triggers.rules || {};
 
+/**
+ * Plugin version.
+ */
+estimote.version = "1.0.0";
+
 /*********************************************************/
 /****************** Debugging Functions ******************/
 /*********************************************************/
@@ -1125,6 +1130,7 @@ estimote.nearables.NearableColorCandyFloss = 5;
  * Nearable colour.
  */
 estimote.nearables.NearableColorLemonTart = 6;
+
 
 /**
  * Nearable object.
