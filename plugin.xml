@@ -10,7 +10,7 @@
 	<keywords>Estimote, Beacons</keywords>
 
 	<js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
-		<clobbers target="estimote" />
+		<clobbers target="cordova.plugins.Estimote" />
 	</js-module>
 
 	<platform name="android">
