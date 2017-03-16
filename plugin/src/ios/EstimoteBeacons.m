@@ -942,6 +942,27 @@
 	didEnterRegion:(CLBeaconRegion *)region
 {
 	// Not used.
+	if ([beacons count] > 0 )
+	{
+		NSString* callbackId = [self.callbackIds_beaconsRanging
+			objectForKey:[self regionDictionaryKey:region]];
+		if (nil != callbackId)
+		{
+			// Create dictionary with result.
+			NSDictionary* resultDictionary = [self
+				dictionaryWithRegion:region
+				andBeacons:beacons];
+
+			// Pass result to JavaScript callback.
+			CDVPluginResult* result = [CDVPluginResult
+				resultWithStatus:CDVCommandStatus_OK
+				messageAsDictionary:resultDictionary];
+			[result setKeepCallbackAsBool: YES];
+			[self.commandDelegate
+				sendPluginResult:result
+				callbackId:callbackId];
+		}
+	}
 }
 
 - (void) beaconManager:(id)manager
